@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{margin:0;padding:24px 18px;background:#0b0b12;color:#fff;font-family:Roboto,Arial,sans-serif}
+h1{font-size:24px;margin:8px 0}
+p,li{color:#bbb;font-size:14px;line-height:1.5}
+button{display:block;width:100%;margin:10px 0;padding:15px;border:0;border-radius:14px;background:#0a84ff;color:#fff;font-size:16px;font-weight:600}
+button.g{background:#2a2a35}
+.s{padding:10px;border-radius:10px;background:#1b1b25;margin:12px 0;font-size:14px}
+</style>
+</head>
+<body>
+<h1>Glass Lock</h1>
+<div class="s" id="st"></div>
+<button onclick="Android.enable();r()">1. Turn on lock screen</button>
+<button class="g" onclick="Android.disable();r()">Turn off</button>
+<button class="g" onclick="Android.preview()">Preview lock screen</button>
+<p>2. Keep it running (important on Huawei):</p>
+<button class="g" onclick="Android.launchMgr()">App launch settings</button>
+<button class="g" onclick="Android.battery()">Battery optimisation</button>
+<ul>
+<li>In App launch, set Glass Lock to Manage manually and allow Auto-launch, Secondary launch and Run in background.</li>
+<li>The passcode is 1234. Change it with the gear icon on the lock screen.</li>
+<li>It appears when you turn the screen off. Your normal phone lock (PIN or fingerprint) still works after it.</li>
+</ul>
+<script>function r(){document.getElementById('st').textContent=Android.isOn()?'Status: ON':'Status: OFF'}r()</script>
+</body>
+</html>
